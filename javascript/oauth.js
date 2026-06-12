@@ -96,8 +96,6 @@ document.addEventListener(
 
 console.log("AUTH URL:", authUrl);
 
-alert(authUrl);
-
 window.location.href = authUrl;
         } catch (error) {
           console.error(
