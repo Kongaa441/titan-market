@@ -95,6 +95,11 @@ document.addEventListener(
             `&code_challenge_method=S256`;
 
 console.log("AUTH URL:", authUrl);
+console.log("Code Verifier:", codeVerifier);
+console.log("Code Challenge:", codeChallenge);
+console.log("AUTH URL:", authUrl);
+
+alert(authUrl);
 
 window.location.href = authUrl;
         } catch (error) {
