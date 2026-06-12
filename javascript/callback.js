@@ -38,13 +38,14 @@ async function handleCallback() {
       return;
     }
 
-    status.innerHTML =
-      "Authorization successful.";
+   status.innerHTML =
+  "Authorization successful.<br><br>" +
+  "Code: " + code;
 
-    console.log(
-      "Authorization Code:",
-      code
-    );
+console.log(
+  "Authorization Code:",
+  code
+);
 
     localStorage.setItem(
       "deriv_auth_code",
@@ -52,13 +53,12 @@ async function handleCallback() {
     );
 
     // Temporary redirect
+setTimeout(() => {
 
-    setTimeout(() => {
+  window.location.href =
+    "/dashboard.html";
 
-      window.location.href =
-        "/dashboard.html";
-
-    }, 2000);
+}, 10000);
 
   } catch (error) {
 
