@@ -85,7 +85,7 @@ document.addEventListener(
           const authUrl =
             `https://auth.deriv.com/oauth2/auth?` +
             `response_type=code` +
-            `&client_id=${CLIENT_ID}` +
+            `&client_id=${APP_ID}` +
             `&redirect_uri=${encodeURIComponent(
               REDIRECT_URI
             )}` +
