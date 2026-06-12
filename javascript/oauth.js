@@ -3,8 +3,7 @@
 const CLIENT_ID = "33wy4dqfvjF15Q5BzAE1c";
 
 const REDIRECT_URI =
-  "https://danis-eldo-fx-danis.netlify.app/callback.html";
-
+  "https://visionary-torte-8f2b75.netlify.app/callback.html";
 // Generate PKCE Code Verifier
 function generateCodeVerifier() {
   const array = crypto.getRandomValues(
@@ -94,9 +93,12 @@ document.addEventListener(
             `&state=${state}` +
             `&code_challenge=${codeChallenge}` +
             `&code_challenge_method=S256`;
+
 console.log("AUTH URL:", authUrl);
-          window.location.href =
-            authUrl;
+
+alert(authUrl);
+
+window.location.href = authUrl;
         } catch (error) {
           console.error(
             "OAuth Error:",
