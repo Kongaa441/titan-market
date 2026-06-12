@@ -1,15 +1,23 @@
 // frontend/javascript/callback.js
 
-const status =
-  document.getElementById("status");
+const status = document.getElementById("status");
 
 async function handleCallback() {
   try {
 
-    const params =
-      new URLSearchParams(
-        window.location.search
-      );
+    const params = new URLSearchParams(
+      window.location.search
+    );
+
+    console.log(
+      "Full URL:",
+      window.location.href
+    );
+
+    console.log(
+      "Search:",
+      window.location.search
+    );
 
     const code =
       params.get("code");
@@ -17,15 +25,36 @@ async function handleCallback() {
     const state =
       params.get("state");
 
+    console.log(
+      "Authorization Code:",
+      code
+    );
+
+    console.log(
+      "OAuth State:",
+      state
+    );
+
     const savedState =
       localStorage.getItem(
         "oauth_state"
       );
 
+    console.log(
+      "Saved State:",
+      savedState
+    );
+
     if (!code) {
 
       status.innerHTML =
-        "Authorization code not found.";
+        "Authorization code not found.<br><br>" +
+        "URL: " +
+        window.location.href;
+
+      console.error(
+        "No authorization code received."
+      );
 
       return;
     }
@@ -35,38 +64,44 @@ async function handleCallback() {
       status.innerHTML =
         "Invalid OAuth state.";
 
+      console.error(
+        "State mismatch."
+      );
+
       return;
     }
-
-   status.innerHTML =
-  "Authorization successful.<br><br>" +
-  "Code: " + code;
-
-console.log(
-  "Authorization Code:",
-  code
-);
 
     localStorage.setItem(
       "deriv_auth_code",
       code
     );
 
-    // Temporary redirect
-setTimeout(() => {
+    status.innerHTML =
+      "Authorization successful.<br><br>" +
+      "Code: " +
+      code;
 
-  window.location.href =
-    "/dashboard.html";
+    console.log(
+      "Authorization code saved."
+    );
 
-}, 10000);
+    setTimeout(() => {
+
+      window.location.href =
+        "/dashboard.html";
+
+    }, 10000);
 
   } catch (error) {
 
-    console.error(error);
+    console.error(
+      "OAuth callback error:",
+      error
+    );
 
     status.innerHTML =
-      "OAuth callback error.";
-
+      "OAuth callback error.<br><br>" +
+      error.message;
   }
 }
 
