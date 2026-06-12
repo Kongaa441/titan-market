@@ -1,6 +1,6 @@
 // frontend/javascript/oauth.js
 
-const CLIENT_ID = "CR00159669";
+const APP_ID = "33wy4dqfvjF15Q5BzAE1c";
 
 const REDIRECT_URI =
   "https://visionary-torte-8f2b75.netlify.app/callback.html";
