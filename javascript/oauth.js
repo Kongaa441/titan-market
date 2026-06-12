@@ -88,7 +88,7 @@ document.addEventListener(
             `&redirect_uri=${encodeURIComponent(
               REDIRECT_URI
             )}` +
-            `&scope=trade account_manage` +
+            `&scope=${encodeURIComponent("trade account_manage")}` +
             `&state=${state}` +
             `&code_challenge=${codeChallenge}` +
             `&code_challenge_method=S256`;
