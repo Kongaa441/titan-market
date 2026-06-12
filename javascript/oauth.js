@@ -5,7 +5,7 @@ const CLIENT_ID = "33wy4dqfvjF15Q5BzAE1c";
 const REDIRECT_URI =
   "https://danis-eldo-fx-danis.netlify.app/callback.html";
 
-// Generate code_verifier
+// Generate PKCE Code Verifier
 function generateCodeVerifier() {
   const array = crypto.getRandomValues(
     new Uint8Array(64)
@@ -21,29 +21,44 @@ function generateCodeVerifier() {
     .join("");
 }
 
-// Generate code_challenge
-async function generateChallenge(codeVerifier) {
+// Generate PKCE Challenge
+async function generateCodeChallenge(
+  codeVerifier
+) {
+  const data = new TextEncoder().encode(
+    codeVerifier
+  );
+
   const hash = await crypto.subtle.digest(
     "SHA-256",
-    new TextEncoder().encode(codeVerifier)
+    data
   );
 
   return btoa(
-    String.fromCharCode(...new Uint8Array(hash))
+    String.fromCharCode(
+      ...new Uint8Array(hash)
+    )
   )
     .replace(/\+/g, "-")
     .replace(/\//g, "_")
     .replace(/=+$/, "");
 }
 
-// Login button
+// OAuth Login
 document.addEventListener(
   "DOMContentLoaded",
   () => {
     const loginBtn =
-      document.getElementById("derivLogin");
+      document.getElementById(
+        "derivLogin"
+      );
 
-    if (!loginBtn) return;
+    if (!loginBtn) {
+      console.error(
+        "Button #derivLogin not found"
+      );
+      return;
+    }
 
     loginBtn.addEventListener(
       "click",
@@ -53,12 +68,12 @@ document.addEventListener(
             generateCodeVerifier();
 
           localStorage.setItem(
-            "deriv_code_verifier",
+            "code_verifier",
             codeVerifier
           );
 
-          const challenge =
-            await generateChallenge(
+          const codeChallenge =
+            await generateCodeChallenge(
               codeVerifier
             );
 
@@ -66,53 +81,30 @@ document.addEventListener(
             crypto.randomUUID();
 
           localStorage.setItem(
-            "deriv_state",
+            "oauth_state",
             state
           );
 
           const authUrl =
             `https://auth.deriv.com/oauth2/auth?` +
-            `client_id=${CLIENT_ID}` +
+            `response_type=code` +
+            `&client_id=${CLIENT_ID}` +
             `&redirect_uri=${encodeURIComponent(
               REDIRECT_URI
             )}` +
-            `&response_type=code` +
-            `&scope=trade` +
-            `&code_challenge=${challenge}` +
-            `&code_challenge_method=S256` +
-            `&state=${state}`;
+            `&scope=trade account_manage` +
+            `&state=${state}` +
+            `&code_challenge=${codeChallenge}` +
+            `&code_challenge_method=S256`;
 
           window.location.href =
             authUrl;
-        } catch (err) {
-          console.error(err);
+        } catch (error) {
+          console.error(
+            "OAuth Error:",
+            error
+          );
         }
-      }
-    );
-  }
-);
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-
-    const loginBtn =
-      document.getElementById(
-        "derivLogin"
-      );
-
-    if (!loginBtn) {
-      console.error(
-        "Login button not found"
-      );
-      return;
-    }
-
-    loginBtn.addEventListener(
-      "click",
-      async () => {
-
-        // Build OAuth URL
-
       }
     );
   }

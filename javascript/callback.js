@@ -1,16 +1,73 @@
-const status = document.getElementById("status");
+// frontend/javascript/callback.js
 
-status.innerHTML = `
-<p><strong>Full URL:</strong></p>
-<p>${window.location.href}</p>
+const status =
+  document.getElementById("status");
 
-<p><strong>Search:</strong></p>
-<p>${window.location.search}</p>
+async function handleCallback() {
+  try {
 
-<p><strong>Hash:</strong></p>
-<p>${window.location.hash}</p>
-`;
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
 
-console.log("FULL URL:", window.location.href);
-console.log("SEARCH:", window.location.search);
-console.log("HASH:", window.location.hash);
+    const code =
+      params.get("code");
+
+    const state =
+      params.get("state");
+
+    const savedState =
+      localStorage.getItem(
+        "oauth_state"
+      );
+
+    if (!code) {
+
+      status.innerHTML =
+        "Authorization code not found.";
+
+      return;
+    }
+
+    if (state !== savedState) {
+
+      status.innerHTML =
+        "Invalid OAuth state.";
+
+      return;
+    }
+
+    status.innerHTML =
+      "Authorization successful.";
+
+    console.log(
+      "Authorization Code:",
+      code
+    );
+
+    localStorage.setItem(
+      "deriv_auth_code",
+      code
+    );
+
+    // Temporary redirect
+
+    setTimeout(() => {
+
+      window.location.href =
+        "/dashboard.html";
+
+    }, 2000);
+
+  } catch (error) {
+
+    console.error(error);
+
+    status.innerHTML =
+      "OAuth callback error.";
+
+  }
+}
+
+handleCallback();
