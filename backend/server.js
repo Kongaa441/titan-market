@@ -2,12 +2,10 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-console.log(
-  "Deriv token loaded:",
-  process.env.DERIV_API_TOKEN ? "YES" : "NO"
-);
-
 const { connectDeriv } = require("./api/api");
+
+const botRoutes = require("./routes/bots");
+const authRoutes = require("./routes/auth");
 
 const app = express();
 
@@ -15,9 +13,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Bots Route
-const botRoutes = require("./routes/bots");
+// Routes
 app.use("/api/bots", botRoutes);
+app.use("/api/auth", authRoutes);
 
 // Home Route
 app.get("/", (req, res) => {
@@ -39,12 +37,5 @@ connectDeriv();
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
-// Bots Route
-const botRoutes = require("./routes/bots");
-app.use("/api/bots", botRoutes);
-
-// Auth Route
-const authRoutes = require("./routes/auth");
-app.use("/api/auth", authRoutes);

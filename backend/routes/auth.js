@@ -49,7 +49,7 @@ const clientId =
 "33wy4dqfvjF15Q5BzAE1c";
 
 const redirectUri =
-"http://localhost:5500/callback.html";
+"https://visionary-torte-8f2b75.netlify.app/callback.html";
 
 window.location.href =
 `https://auth.deriv.com/oauth2/auth

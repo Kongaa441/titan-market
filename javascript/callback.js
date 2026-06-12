@@ -45,7 +45,24 @@ async function handleCallback() {
       savedState
     );
 
-    if (!code) {
+    const error = params.get("error");
+const errorDescription =
+  params.get("error_description");
+
+if (error) {
+
+  status.innerHTML =
+    "OAuth Error:<br><br>" +
+    error +
+    "<br><br>" +
+    decodeURIComponent(
+      errorDescription || ""
+    );
+
+  return;
+}
+
+if (!code) {
 
       status.innerHTML =
         "Authorization code not found.<br><br>" +
