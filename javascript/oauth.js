@@ -1,7 +1,6 @@
 // frontend/javascript/oauth.js
 
-const APP_ID = "33wy4dqfvjF15Q5BzAE1c";
-
+const CLIENT_ID = "CR00159669";
 const REDIRECT_URI =
   "https://visionary-torte-8f2b75.netlify.app/callback.html";
 // Generate PKCE Code Verifier
@@ -85,7 +84,7 @@ document.addEventListener(
           const authUrl =
             `https://auth.deriv.com/oauth2/auth?` +
             `response_type=code` +
-            `&client_id=${APP_ID}` +
+            `&client_id=${CLIENT_ID}` +
             `&redirect_uri=${encodeURIComponent(
               REDIRECT_URI
             )}` +
