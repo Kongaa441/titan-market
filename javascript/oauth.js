@@ -96,7 +96,7 @@ document.addEventListener(
             `&state=${state}` +
             `&code_challenge=${codeChallenge}` +
             `&code_challenge_method=S256`;
-
+console.log("AUTH URL:", authUrl);
           window.location.href =
             authUrl;
         } catch (error) {
