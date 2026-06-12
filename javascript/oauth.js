@@ -49,9 +49,7 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     const loginBtn =
-      document.getElementById(
-        "derivLogin"
-      );
+      document.getElementById("derivLoginBtn");
 
     if (!loginBtn) {
       console.error(
