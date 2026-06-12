@@ -1,0 +1,1 @@
+{"name":"backend","version":"1.0.0","description":"TradeHub Backend","main":"server.js","scripts":{"start":"node server.js"},"type":"commonjs","dependencies":{"bcryptjs":"^3.0.3","cors":"^2.8.5","dotenv":"^17.0.0","express":"^5.1.0","ws":"^8.18.3"}}

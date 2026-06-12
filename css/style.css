@@ -1,0 +1,646 @@
+html{
+    scroll-behavior:smooth;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/* ======================
+   TOPBAR
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.topbar{
+    height:70px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:#5b5ce2;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.topbar nav{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.topbar nav a{
+    text-decoration:none;
+  color: #FFFFFF;        /* White text */
+    font-size:14px;
+    font-weight:600;
+
+    background:hwb(198 6% 73%);
+    padding:10px 16px;
+    border-radius:8px;
+
+    flex-shrink:0;
+    transition:0.3s;
+}
+
+.topbar nav a:hover{
+    background:#5b5ce2;
+    color:white;
+}
+
+.topbar nav i{
+    margin-right:5px;
+}
+
+/* ======================
+   AUTH BUTTONS
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.auth{
+    display:flex;
+    gap:12px;
+}
+
+.auth a{
+    text-decoration:none;
+}
+
+.login{
+    background:#fff;
+    border:1px solid #ddd;
+    color:#333;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.login:hover{
+    background:#f5f5f5;
+}
+
+.signup{
+    background:#ff5a7a;
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.signup:hover{
+    opacity:.9;
+}
+
+/* ======================
+   DASHBOARD
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 340px;
+    gap:20px;
+    padding:20px;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* ======================
+   MAIN CONTENT
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.content{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* ======================
+   SUB NAVIGATION
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.subnav{
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:6px;
+    padding:15px 20px;
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.subnav a{
+    text-decoration:none;
+    color:#444;
+    font-size:14px;
+}
+
+.subnav .active{
+    color:#000;
+    font-weight:700;
+}
+
+/* ======================
+   RUN BAR
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.run-bar{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:4px;
+    height:50px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 15px;
+}
+
+#runBtn{
+    background:#2ec4b6;
+    color:#fff;
+    border:none;
+    padding:10px 28px;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+#runBtn:hover{
+    opacity:.9;
+}
+
+#status{
+    color:#555;
+    font-weight:600;
+}
+
+/* ======================
+   IMPORT TEXT
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.import-text{
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+}
+
+/* ======================
+   BOT OPTIONS
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.bot-options{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:150px;
+    height:130px;
+
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:8px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    transition:.3s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.card i{
+    font-size:38px;
+    color:#5b5ce2;
+    margin-bottom:12px;
+}
+
+.card h3{
+    font-size:16px;
+    text-align:center;
+}
+
+/* ======================
+   TABLE
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.table-box{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:8px;
+    padding:20px;
+}
+
+.table-box h2{
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:left;
+    padding:14px;
+    background:#fafafa;
+    border-bottom:1px solid #eee;
+}
+
+td{
+    padding:15px;
+    border-bottom:1px solid #eee;
+}
+
+td i{
+    margin-right:12px;
+    color:#666;
+    cursor:pointer;
+}
+
+td i:hover{
+    color:#5b5ce2;
+}
+
+/* ======================
+   SIDEBAR
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.help-panel{
+    background:#fff;
+    padding:30px;
+    border-left:1px solid #e5e5e5;
+    min-height:700px;
+}
+
+.help-panel h1{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.help-panel h2{
+    margin-top:25px;
+    margin-bottom:15px;
+}
+
+.help-panel p{
+    line-height:1.8;
+    color:#444;
+}
+
+.help-panel ul{
+    padding-left:20px;
+}
+
+.help-panel li{
+    margin-bottom:12px;
+}
+
+/* ======================
+   GUIDE IMAGE
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.guide-image{
+    margin:20px 0;
+}
+
+.guide-image img{
+    width:100%;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+
+/* ======================
+   FLOATING BUTTON
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+.floating-help{
+    position:fixed;
+    bottom:25px;
+    left:25px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#5b5ce2;
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+    cursor:pointer;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+
+.floating-help:hover{
+    transform:scale(1.05);
+}
+
+/* ======================
+   MOBILE
+====================== */
+html{
+    scroll-behavior:smooth;
+}
+.topbar nav::-webkit-scrollbar{
+    height:4px;
+}
+
+.topbar nav::-webkit-scrollbar-thumb{
+    background:#cfcfcf;
+    border-radius:10px;
+}
+
+@media(max-width:1100px){
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .help-panel{
+        border-left:none;
+        border-top:1px solid #ddd;
+        min-height:auto;
+    }
+
+    .topbar{
+        flex-direction:column;
+        height:auto;
+        padding:15px;
+        gap:15px;
+        align-items:flex-start;
+    }
+
+    .topbar nav{
+        width:100%;
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        overflow-x:auto;
+        overflow-y:hidden;
+        white-space:nowrap;
+    }
+
+    .bot-options{
+        justify-content:center;
+    }
+
+    .card{
+        width:140px;
+        height:120px;
+    }
+}#depositBtn,
+#withdrawBtn{
+    background:#2ec4b6;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+    margin-top:15px;
+}
+
+#depositBtn:hover,
+#withdrawBtn:hover{
+    opacity:.9;
+}@media(max-width:768px){
+
+    .utility-bar{
+        overflow-x:auto;
+        white-space:nowrap;
+        padding:0 15px;
+    }
+
+    .utility-left,
+    .utility-right{
+        flex-shrink:0;
+    }
+
+}
+/* ==========================
+   TOP UTILITY BAR
+========================== */
+html{
+    scroll-behavior:smooth;
+}
+
+.utility-bar{
+    background:#0b2239;
+    color:white;
+
+    height:42px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 30px;
+}
+
+.utility-left,
+.utility-right{
+    display:flex;
+    gap:20px;
+}
+
+.utility-bar a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+.utility-bar a:hover{
+    color:#ffd700;
+}
+#createBotBtn{
+    background:#5b5ce2;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-bottom:20px;
+    font-weight:600;
+    font-size:14px;
+}
+
+#createBotBtn:hover{
+    opacity:0.9;
+}
+.status-running{
+    color:green;
+    font-weight:bold;
+}
+
+.status-stopped{
+    color:red;
+    font-weight:bold;
+}
+
+tbody tr:hover{
+    background:#f5f7ff;
+}

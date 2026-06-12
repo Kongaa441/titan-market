@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="0; url=dashboard.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Option AI Trading Bot Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    redirecting to dashboard...
+
+<!-- =========================
+     TOP NAVIGATION
+========================= -->
+<!-- TOP UTILITY BAR -->
+
+<div class="utility-bar">
+
+    <div class="utility-left">
+
+        <a href="#">Deposit</a>
+
+        <a href="#">Withdrawal</a>
+
+    </div>
+
+  <div class="utility-right">
+
+    <button id="derivLogin">
+        Login With Deriv
+    </button>
+
+</div>
+
+</div>
+
+<header class="topbar">
+
+    <div class="logo">
+        <i class="fas fa-arrow-trend-up"></i>
+        Option AI
+    </div>
+
+    <nav>
+       <a href="#dashboard" class="active">
+    <i class="fas fa-border-all"></i>
+    Dashboard
+</a>
+
+        <a href="#botbuilder">
+            <i class="fas fa-puzzle-piece"></i>
+            Bot Builder
+        </a>
+
+        <a href="#manualtrading">
+            <i class="fas fa-chart-line"></i>
+            Manual Trading
+        </a>
+
+        <a href="#charts">
+            <i class="fas fa-chart-area"></i>
+            Charts
+        </a>
+
+        <a href="#tutorials">
+            <i class="fas fa-book-open"></i>
+            Tutorials
+        </a>
+
+        <a href="#tradingbots">
+            <i class="fas fa-robot"></i>
+            Trading Bots
+        </a>
+
+        <a href="#strategies">
+            <i class="fas fa-signal"></i>
+            Strategies
+        </a>
+
+        <a href="#copytrading">
+            <i class="fas fa-users"></i>
+            Copy Trading
+        </a>
+
+</header>
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<div class="dashboard">
+
+    <!-- MAIN CONTENT -->
+
+    <main class="content" id="dashboard">
+
+        <!-- RUN BAR -->
+
+        <div class="run-bar">
+
+            <button id="runBtn">
+                <i class="fas fa-play"></i>
+                Run
+            </button>
+
+            <span id="status">
+                Bot is not running
+            </span>
+
+        </div>
+
+        <!-- IMPORT TEXT -->
+
+        <div class="import-text">
+            Import a bot from your computer or Google Drive,
+            build it from scratch, or start with a quick strategy.
+        </div>
+
+     <!-- BOT OPTIONS -->
+
+<section class="bot-options" id="botbuilder">
+
+```
+<div class="card">
+    <i class="fas fa-desktop"></i>
+    <h3>My Computer</h3>
+</div>
+
+<div class="card">
+    <i class="fab fa-google-drive"></i>
+    <h3>Google Drive</h3>
+</div>
+
+<div class="card">
+    <i class="fas fa-puzzle-piece"></i>
+    <h3>Bot Builder</h3>
+</div>
+
+<div class="card">
+    <i class="fas fa-layer-group"></i>
+    <h3>Quick Strategy</h3>
+</div>
+```
+
+</section>
+
+<!-- CREATE BOT BUTTON -->
+
+<button id="createBotBtn">
+    <i class="fas fa-plus"></i>
+    Create New Bot
+</button>
+
+<!-- BOT TABLE -->
+
+<section class="table-box" id="tradingbots">
+
+```
+<h2>Your Bots</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Bot Name</th>
+            <th>Created</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody id="botTableBody">
+    </tbody>
+
+</table>
+
+
+</section>
+
+<!-- MANUAL TRADING -->
+
+<section id="manualtrading" class="table-box">
+    <h2>Manual Trading</h2>
+    <p>Manual trading tools will be added here.</p>
+</section>
+
+        <!-- CHARTS -->
+
+        <section id="charts" class="table-box">
+            <h2>Charts</h2>
+            <p>Trading charts will be added here.</p>
+        </section>
+
+        <!-- TUTORIALS -->
+
+        <section id="tutorials" class="table-box">
+            <h2>Tutorials</h2>
+            <p>Trading tutorials will be added here.</p>
+        </section>
+
+        <!-- STRATEGIES -->
+
+        <section id="strategies" class="table-box">
+            <h2>Strategies</h2>
+            <p>Trading strategies will be added here.</p>
+        </section>
+
+        <!-- COPY TRADING -->
+
+        <section id="copytrading" class="table-box">
+            <h2>Copy Trading</h2>
+            <p>Copy trading tools will be added here.</p>
+        </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+
+    <aside class="help-panel">
+
+        <h1>Welcome to Deriv Bot!</h1>
+
+        <p>
+            Ready to automate your trading strategy without writing any code?
+            Build, test and deploy bots directly from your dashboard.
+        </p>
+
+        <h2>Guide</h2>
+
+        <div class="guide-image">
+            <img src="images/dashboard-preview.png" alt="Dashboard Guide">
+        </div>
+
+        <p>
+            Learn how to create trading bots, connect APIs,
+            manage strategies and automate your trading process.
+        </p>
+
+        <h2>FAQs</h2>
+
+        <ul>
+            <li>What is a Trading Bot?</li>
+            <li>Where do I find the blocks I need?</li>
+            <li>How do I remove blocks?</li>
+            <li>How do I connect my trading account?</li>
+            <li>How do I deploy my bot?</li>
+        </ul>
+
+    </aside>
+
+</div>
+
+<!-- FLOATING BUTTON -->
+
+<div class="floating-help">
+    <i class="fas fa-chart-bar"></i>
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script src="javascript/app.js"></script>
+<script src="javascript/oauth.js"></script>
+
+</body>
+</html>
